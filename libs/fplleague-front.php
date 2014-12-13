@@ -15,7 +15,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 		 */
 		public static function print_front_styles() {
 
-			wp_register_style( 'fplleague-front', plugins_url( 'assets/css/fplleague-backend.css', dirname( __FILE__ ) ) );
+			wp_register_style( 'fplleague-front', plugins_url( 'assets/styles/fplleague-backend.css', dirname( __FILE__ ) ) );
 			wp_enqueue_style( 'fplleague-front' );
 
 		}
