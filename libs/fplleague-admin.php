@@ -239,7 +239,7 @@ if (! class_exists('FPLLeague_Admin')) {
 				add_menu_page(
 					'Overview',
 					'Pool League',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					$parent,
 					array($instance, 'overview_tabs_page'),
 					'none',
@@ -255,7 +255,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'About',
 					'About',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-overview-about',
 					array($instance, 'overview_tabs_page')
 				);
@@ -265,7 +265,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Seasons',
 					'Seasons',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-overview-seasons',
 					array($instance, 'overview_tabs_page')
 				);
@@ -275,7 +275,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Seasons',
 					'Seasons',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-seasons',
 					array($instance, 'admin_page')
 				);
@@ -285,7 +285,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Divisions',
 					'Divisions',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-divisions',
 					array($instance, 'admin_page')
 				);
@@ -295,7 +295,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Teams',
 					'Teams',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-teams',
 					array($instance, 'admin_page')
 				);
@@ -305,7 +305,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Players',
 					'Players',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-players',
 					array($instance, 'admin_page')
 				);
@@ -315,7 +315,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add Player',
 					'Add Player',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-player',
 					array($instance, 'admin_page')
 				);
@@ -325,7 +325,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Player',
 					'Edit Player',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-player',
 					array($instance, 'admin_page')
 				);
@@ -335,7 +335,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Player',
 					'Delete Player',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-player',
 					array($instance, 'admin_page')
 				);
@@ -347,7 +347,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Doubles',
 					'Doubles',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-doubles',
 					array($instance, 'admin_page')
 				);
@@ -357,7 +357,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add Doubles',
 					'Add Doubles',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-doubles',
 					array($instance, 'admin_page')
 				);
@@ -367,7 +367,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Doubles',
 					'Edit Doubles',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-doubles',
 					array($instance, 'admin_page')
 				);
@@ -377,7 +377,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Doubles',
 					'Delete Doubles',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-doubles',
 					array($instance, 'admin_page')
 				);
@@ -389,7 +389,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Cup Competitions',
 					'Cup Competitions',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-cups',
 					array($instance, 'admin_page')
 				);
@@ -399,7 +399,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add Cup Competition',
 					'Add Cup Competition',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-cup',
 					array($instance, 'admin_page')
 				);
@@ -409,7 +409,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Cup Competition',
 					'Edit Cup Competition',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-cup',
 					array($instance, 'admin_page')
 				);
@@ -419,7 +419,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Cup Competition',
 					'Delete Cup Competition',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-cup',
 					array($instance, 'admin_page')
 				);
@@ -429,7 +429,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Schedule',
 					'Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-schedule',
 					array($instance, 'admin_page')
 				);
@@ -439,7 +439,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Results',
 					'Results',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-results',
 					array($instance, 'admin_page')
 				);
@@ -449,7 +449,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					$parent,
 					'Settings',
 					'Settings',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-settings',
 					array($instance, 'admin_page')
 				);
@@ -458,7 +458,7 @@ if (! class_exists('FPLLeague_Admin')) {
 				add_options_page(
 					'Pool League',
 					'Pool League',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-settings',
 					array($instance, 'admin_page')
 				);
@@ -468,7 +468,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Season',
 					'Add New Season',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-season',
 					array($instance, 'admin_page')
 				);
@@ -478,7 +478,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Season',
 					'Edit Season',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-season',
 					array($instance, 'admin_page')
 				);
@@ -488,7 +488,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Season',
 					'Delete Season',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-season',
 					array($instance, 'admin_page')
 				);
@@ -498,7 +498,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Division',
 					'Add New Division',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-division',
 					array($instance, 'admin_page')
 				);
@@ -508,7 +508,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Division',
 					'Edit Division',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-division',
 					array($instance, 'admin_page')
 				);
@@ -518,7 +518,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Division',
 					'Delete Division',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-division',
 					array($instance, 'admin_page')
 				);
@@ -528,7 +528,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Team',
 					'Add New Team',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-team',
 					array($instance, 'admin_page')
 				);
@@ -538,7 +538,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Team',
 					'Edit Team',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-team',
 					array($instance, 'admin_page')
 				);
@@ -548,7 +548,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Team',
 					'Delete Team',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-team',
 					array($instance, 'admin_page')
 				);
@@ -558,7 +558,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Player',
 					'Add New Player',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-player',
 					array($instance, 'admin_page')
 				);
@@ -568,7 +568,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Player',
 					'Edit Player',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-player',
 					array($instance, 'admin_page')
 				);
@@ -578,7 +578,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Player',
 					'Delete Player',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-player',
 					array($instance, 'admin_page')
 				);
@@ -588,7 +588,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Schedule',
 					'Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-schedule',
 					array($instance, 'admin_page')
 				);
@@ -598,7 +598,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Schedule',
 					'Add New Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-schedule',
 					array($instance, 'admin_page')
 				);
@@ -608,7 +608,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Schedule',
 					'Edit Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-schedule',
 					array($instance, 'admin_page')
 				);
@@ -618,7 +618,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Schedule',
 					'Delete Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-schedule',
 					array($instance, 'admin_page')
 				);
@@ -628,7 +628,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Fixtures',
 					'Fixtures',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-fixtures',
 					array($instance, 'admin_page')
 				);
@@ -638,7 +638,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Fixture',
 					'Add New Fixture',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-fixture',
 					array($instance, 'admin_page')
 				);
@@ -648,7 +648,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Fixture',
 					'Edit Fixture',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-fixture',
 					array($instance, 'admin_page')
 				);
@@ -658,7 +658,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Fixture',
 					'Delete Fixture',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-fixture',
 					array($instance, 'admin_page')
 				);
@@ -668,7 +668,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Results',
 					'Results',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-results',
 					array($instance, 'admin_page')
 				);
@@ -678,7 +678,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add New Result',
 					'Add New Result',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-result',
 					array($instance, 'admin_page')
 				);
@@ -688,7 +688,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Result',
 					'Edit Result',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-result',
 					array($instance, 'admin_page')
 				);
@@ -698,7 +698,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Result',
 					'Delete Result',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-result',
 					array($instance, 'admin_page')
 				);
@@ -708,7 +708,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Rebuid Tables',
 					'Rebuild Tables',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-rebuild-tables',
 					array($instance, 'admin_page')
 				);
@@ -718,7 +718,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Cup Schedule',
 					'Cup Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-cup-schedule',
 					array($instance, 'admin_page')
 				);
@@ -728,7 +728,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Add Cup Schedule',
 					'Add Cup Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-add-cup-schedule',
 					array($instance, 'admin_page')
 				);
@@ -738,7 +738,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Edit Cup Schedule',
 					'Edit Cup Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-edit-cup-schedule',
 					array($instance, 'admin_page')
 				);
@@ -748,7 +748,7 @@ if (! class_exists('FPLLeague_Admin')) {
 					NULL,
 					'Delete Cup Schedule',
 					'Delete Cup Schedule',
-					FPLLeague::$access,
+					FPLLeague_Backend::$access,
 					'fplleague-delete-cup-schedule',
 					array($instance, 'admin_page')
 				);
