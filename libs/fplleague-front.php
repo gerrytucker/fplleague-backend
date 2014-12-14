@@ -357,7 +357,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 
 				if ( $id_team == $fixture['id_team_home'] ) {
 
-					$team_url = trailingslashit( get_bloginfo( 'wpurl' ) . '/team/' . $fixture['id_team_home'] );
+					$team_url = trailingslashit( get_bloginfo( 'wpurl' ) . '/team/' . $fixture['id_team_away'] );
 
 					$output .=
 							'<td class="hidden-for-medium-up"><a href="' . $team_url . '">' . $fixture['team_away_name'] . '</a></td>';
@@ -365,7 +365,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 				}
 				else if ( $id_team == $fixture['id_team_away'] ) {
 
-					$team_url = trailingslashit( get_bloginfo( 'wpurl' ) . '/team/' . $fixture['id_team_away'] );
+					$team_url = trailingslashit( get_bloginfo( 'wpurl' ) . '/team/' . $fixture['id_team_home'] );
 
 					$output .=
 							'<td class="hidden-for-medium-up"><a href="' . $team_url . '">' . $fixture['team_home_name'] . '</a></td>';
