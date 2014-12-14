@@ -1188,17 +1188,22 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 			global $wpdb;
 
 			return $wpdb->get_results( $wpdb->prepare(
-				"SELECT d.id, p1.id_player_1, p1.name_player_1, p2.id_player_2, p2.name_player_2, d.id_team, t.name as team_name
+				"SELECT d.id,
+				d.id_player_1,
+				CONCAT(p1.first_name, ' ', p1.last_name) AS name_player_1,
+				d.id_player_2,
+				CONCAT(p2.first_name, ' ', p2.last_name) AS name_player_2,
+				d.id_team,
+				t.name as team_name
 				FROM $wpdb->doubles AS d
 				LEFT JOIN $wpdb->players p1
 				ON p1.id = d.id_player_1
 				LEFT JOIN $wpdb->players p2
 				ON p2.id = d.id_player_2
 				LEFT JOIN $wpdb->teams AS t
-				ON p.id_team = t.id
-				ORDER BY t.name ASC, p1.name_player_1
-				LIMIT %d, %d",
-				$offset, $limit ), ARRAY_A
+				ON d.id_team = t.id
+				ORDER BY t.name ASC, name_player_1
+				LIMIT %d, %d", $offset, $limit ), ARRAY_A
 			);
 
 		}
