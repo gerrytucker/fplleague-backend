@@ -813,9 +813,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 				ON b.id = a.id_team_home
 				LEFT JOIN $wpdb->teams c
 				ON c.id = a.id_team_away
-				WHERE d.played IS NULL
-				AND ( a.id_team_home = %d
-				OR a.id_team_away = %d )
+				WHERE ( a.id_team_home = %d OR a.id_team_away = %d )
 				ORDER BY a.id",
 				$id_team, $id_team ), ARRAY_A
 			);
