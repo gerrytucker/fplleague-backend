@@ -106,7 +106,7 @@ if ( ! class_exists( 'FPLLeague_Backend' ) ) {
 		public function define_constants() {
 
 			define( 'FPLLEAGUE_VERSION', '13.1.0' );
-			define( 'FPLLEAGUE_DB_VERSION', '4.3.0' );
+			define( 'FPLLEAGUE_DB_VERSION', '4.4.0' );
 			define( 'FPLLEAGUE_PATH', plugin_dir_path( __FILE__ ) );
 
 		}
@@ -381,7 +381,16 @@ if ( ! class_exists( 'FPLLeague_Backend' ) ) {
 
 			}
 
+			if (version_compare($current_db_version, '4.4.0', '<')) {
 
+				$wpdb->query("ALTER TABLE $wpdb->doubles DROP name_player_1;");
+				$wpdb->query("ALTER TABLE $wpdb->doubles DROP name_player_2;");
+				$wpdb->query("ALTER TABLE $wpdb->doubles ADD id_player_1 SMALLINT(6) NOT NULL DEFAULT 0 AFTER id;");
+				$wpdb->query("ALTER TABLE $wpdb->doubles ADD id_player_2 SMALLINT(6) NOT NULL DEFAULT 0 AFTER id_player_1;");
+
+			}
+			
+			
 			// Basic actions to do everytime we upgrade FPLLeague...
 			if ( $current_version < FPLLEAGUE_VERSION ) {
 				update_option( 'fplleague_version', FPLLEAGUE_VERSION);
