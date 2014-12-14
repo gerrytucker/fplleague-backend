@@ -276,7 +276,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 					'</thead>' .
 					'<tbody>';
 
-			$fixtures = $db->get_every_team_fixture( $id_team );
+			$fixtures = $db->get_every_team_result( $id_team );
 
 			foreach ( $fixtures as $fixture ) {
 
