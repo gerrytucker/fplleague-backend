@@ -256,7 +256,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 				'<p>Play in <strong>' . $division['name'] . $record . '</strong></p>';
 
 			$output .=
-				'<h3>Results</h3>' .
+				'<h3>Fixtures</h3>' .
 				'<table id="fplleague_results">' .
 					'<thead>' .
 						'<tr>' .
@@ -381,7 +381,13 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 				}
 				
 				// Result
-				if ( $fixture['played'] !== NULL ) {
+				if ( $fixture['played'] == NULL ) {
+					$output .=
+						'<td class="centered hidden-for-medium-up">-</td>' .
+						'<td class="centered hidden-for-medium-up">-</td>' .
+						'<td class="centered hidden-for-medium-up">-</td>';
+				}
+				else {
 					if ( $id_team == $fixture['id_team_home'] ) {
 						if ( $fixture['point_home'] > $fixture['point_away'] ) {
 							$output .= '<td class="centered hidden-for-medium-up">W</td>';
@@ -420,89 +426,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 					'<tbody>' .
 				'</table>';
 
-			$output .=
-				'<h3>Fixtures</h3>' .
-				'<table id="fplleague_fixtures">' .
-					'<thead>' .
-						'<tr>' .
-							'<th class="centered">' . __('Date', 'fplleague') . '</th>' .
-							'<th class="centered">' . __('Home Team', 'fplleague') . '</th>' .
-							'<th class="centered">' . __('Pts', 'fplleague') . '</th>' .
-							'<th class="centered">' . __('-', 'fplleague') . '</th>' .
-							'<th class="centered">' . __('Pts', 'fplleague') . '</th>' .
-							'<th class="centered">' . __('Away Team', 'fplleague') . '</th>' .
-						'</tr>' .
-					'</thead>' .
-					'<tbody>';
-
-			$fixtures = $db->get_every_team_fixture( $id_team );
-
-			foreach ( $fixtures as $fixture ) {
-
-				$output .=
-						'<tr>' .
-							'<td class="centered">';
-
-				if ( $fixture['played'] !== NULL ) {
-					list($year, $month, $day) = explode('-', $fixture['played']);
-					$time = mktime(0, 0, 0, $month, $day, $year);
-					$played = date( 'd/m/Y', $time );
-					$output .= $played;
-				}
-				else {
-					list($year, $month, $day) = explode('-', $fixture['scheduled']);
-					$time = mktime(0, 0, 0, $month, $day, $year);
-					$scheduled = date( 'd/m/Y', $time );
-					$output .= $scheduled;
-				}
-
-				$output .=
-							'</td>';
-
-				if ( $id_team == $fixture['id_team_home'] ) {
-
-					$output .=
-							'<td><strong>' . $fixture['team_home_name'] . '</strong></td>';
-
-				}
-				else {
-
-					$team_url = trailingslashit( get_bloginfo( 'wpurl' ) . '/team/' . $fixture['id_team_home'] );
-
-					$output .=
-							'<td><a href="' . $team_url . '">' . $fixture['team_home_name'] . '</a></td>';
-
-				}
-
-				$output .=
-							'<td class="centered">' . $fixture['point_home'] . '</td>' .
-							'<td class="centered">-</td>' .
-							'<td class="centered">' . $fixture['point_away'] . '</td>';
-
-				if ( $id_team == $fixture['id_team_away'] ) {
-
-					$output .=
-							'<td><strong>' . $fixture['team_away_name'] . '</strong></td>';
-
-				}
-				else {
-
-					$team_url = trailingslashit( get_bloginfo( 'wpurl' ) . '/team/' . $fixture['id_team_away'] );
-
-					$output .=
-							'<td><a href="' . $team_url . '">' . $fixture['team_away_name'] . '</a></td>';
-
-				}
-
-				$output .=
-						'</tr>';
-
-			}
-
-			$output .=
-					'<tbody>' .
-				'</table>';
-
+			// League table
 			$output .= $this->get_team_table( $id_team );
 
 			return $output;

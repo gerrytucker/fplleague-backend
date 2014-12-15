@@ -3,7 +3,7 @@
 Plugin Name: Flegg Pool League Backend
 Plugin URI: https://github.com/gerrytucker/fplleague-backend
 Description: Backend administration for Flegg Pool League.
-Version: 14.3.0
+Version: 14.4.0
 Author: Gerry Tucker
 Author URI: http://gerrytucker.co.uk/
 GitHub Plugin URI: https://github.com/gerrytucker/fplleague-backend
