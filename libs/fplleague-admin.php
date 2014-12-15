@@ -807,6 +807,48 @@ if (! class_exists('FPLLeague_Admin')) {
 
 		}
 
+		public static function fplleague_admin_get_players_from_team_js() {
+?>	
+		
+			<script type="text/javascript">
+
+				(function ($) {
+					'use strict';
+
+					var FPLLeague_Backend = {
+
+						doubles: function () {
+
+							$('#doubles_select_team').change(function () {
+
+								var
+									id_team = $('option:selected', this).val(),
+									data = {
+										'action': 'fplleague_admin_get_players_from_team',
+										'id_team': id_team
+									};
+
+								$.post(ajaxurl, data, function (resp) {
+
+								});
+
+							});
+						}
+
+					};
+
+					jQuery(document).ready(function ($) {
+
+						FPLLeague_Backend.doubles();
+
+					});
+
+				})(jQuery);
+
+</script>
+<?php		
+		}
+		
 	}
 	
 }
