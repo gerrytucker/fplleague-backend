@@ -38,7 +38,9 @@ if ( isset( $_POST['noheader'] ) ) {
 
 					<th scope="row">
 
-						<label for="id_team">Step 1 - Select A Team</label>
+						<h3>Step 1 - Select A Team</h3>
+						
+						<label for="id_team">Team</label>
 
 					</th>
 
@@ -67,7 +69,7 @@ if ( isset( $_POST['noheader'] ) ) {
 
 		</table>
 
-		<input class="button button-primary button-large" type="submit" name="publish" id="publish" value="<?php _e( 'Save' ); ?> disabled">
+		<input class="button button-primary button-large" type="submit" name="publish" id="publish" value="<?php _e( 'Save' ); ?>" disabled>
 
 	</form>
 
