@@ -131,6 +131,7 @@ if ( ! class_exists( 'FPLLeague_Backend' ) ) {
 			$wpdb->cup_schedules = $wpdb->prefix . 'fplleague_cup_schedules';
 		}
 
+		
 		/**
 		 * Initialize Admin
 		 */
