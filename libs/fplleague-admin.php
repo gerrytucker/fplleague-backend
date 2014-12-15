@@ -820,7 +820,7 @@ if (! class_exists('FPLLeague_Admin')) {
 						doubles: function () {
 
 							$('#doubles_select_team').change(function () {
-
+								console.log('here');
 								var
 									id_team = $('option:selected', this).val(),
 									data = {
@@ -829,7 +829,7 @@ if (! class_exists('FPLLeague_Admin')) {
 									};
 
 								$.post(ajaxurl, data, function (resp) {
-
+									console.log(resp);
 								});
 
 							});
