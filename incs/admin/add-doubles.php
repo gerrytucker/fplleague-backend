@@ -48,7 +48,7 @@ if ( isset( $_POST['noheader'] ) ) {
 
 					<td>
 
-						<select name="id_team">
+						<select id="doubles_select_team" name="id_team">
 
 							<option value="">Select A Team...</option>
 
