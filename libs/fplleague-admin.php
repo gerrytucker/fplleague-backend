@@ -824,7 +824,7 @@ if (! class_exists('FPLLeague_Admin')) {
 								var
 									id_team = $('option:selected', this).val(),
 									data = {
-										'action': 'fplleague_admin_get_players_from_team',
+										'action': 'fplleague_admin_get_players_from_team_action',
 										'id_team': id_team
 									};
 
