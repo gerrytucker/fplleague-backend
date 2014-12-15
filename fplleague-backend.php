@@ -3,7 +3,7 @@
 Plugin Name: Flegg Pool League Backend
 Plugin URI: https://github.com/gerrytucker/fplleague-backend
 Description: Backend administration for Flegg Pool League.
-Version: 17.5.0
+Version: 17.6.0
 Author: Gerry Tucker
 Author URI: http://gerrytucker.co.uk/
 GitHub Plugin URI: https://github.com/gerrytucker/fplleague-backend
@@ -83,7 +83,7 @@ if ( ! class_exists( 'FPLLeague_Backend' ) ) {
 				add_action( 'admin_enqueue_scripts', array( &$this, 'print_admin_scripts' ) );
 				add_action( 'admin_menu', array( 'FPLLeague_Admin', 'admin_menu' ) );
 				add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
-				add_action( 'wp_admin_footer', array( 'FPLLeague_Admin', 'fplleague_admin_get_players_from_team_js' );
+				add_action( 'admin_footer', array( 'FPLLeague_Admin', 'fplleague_admin_get_players_from_team_js' );
 				add_action( 'fplleague_admin_get_players_from_team_action', array( &$this, 'fplleague_admin_get_players_from_team' ) );
 			}
 			else {
