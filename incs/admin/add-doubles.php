@@ -35,11 +35,13 @@ if ( isset( $_POST['noheader'] ) ) {
 			<tbody>
 
 				<tr>
+					<th scope="row"><h3>Step 1 - Select A Team</h3></th>
+				</tr>
+				
+				<tr>
 
 					<th scope="row">
 
-						<h3>Step 1 - Select A Team</h3>
-						
 						<label for="id_team">Team</label>
 
 					</th>
