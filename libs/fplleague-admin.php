@@ -798,6 +798,15 @@ if (! class_exists('FPLLeague_Admin')) {
 
 		}
 
-	}
+		public static function fplleague_admin_get_players_from_team() {
 
+			$db = new FPLLeague_Database;
+
+			echo 'this is the result';
+			die();
+
+		}
+
+	}
+	
 }
