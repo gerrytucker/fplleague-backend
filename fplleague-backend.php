@@ -3,7 +3,7 @@
 Plugin Name: Flegg Pool League Backend
 Plugin URI: https://github.com/gerrytucker/fplleague-backend
 Description: Backend administration for Flegg Pool League.
-Version: 15.2.0
+Version: 15.3.0
 Author: Gerry Tucker
 Author URI: http://gerrytucker.co.uk/
 GitHub Plugin URI: https://github.com/gerrytucker/fplleague-backend
@@ -80,8 +80,7 @@ if ( ! class_exists( 'FPLLeague_Backend' ) ) {
 				add_action( 'init', array( 'FPLLeague_Admin', 'add_editor_button' ) );
 				add_action( 'admin_init', array( &$this, 'fplleague_admin_init' ) );
 				add_action( 'admin_init', array( &$this, 'plugin_check_upgrade' ) );
-				add_action( 'admin_print_styles', array( &$this, 'print_admin_styles' ) );
-				add_action( 'admin_print_scripts', array( &$this, 'print_admin_scripts' ) );
+				add_action( 'admin_enqueue_scripts', array( &$this, 'print_admin_scripts' ) );
 				add_action( 'admin_menu', array( 'FPLLeague_Admin', 'admin_menu' ) );
 				add_filter( 'plugin_action_links', array( &$this, 'plugin_action_links' ), 10, 2 );
 
@@ -151,20 +150,12 @@ if ( ! class_exists( 'FPLLeague_Backend' ) ) {
 		}
 
 		/**
-		 * Enqueue admin styles
+		 * Enqueue admin scripts
 		 */
-		public static function print_admin_styles() {
+		public static function print_admin_scripts( $hook ) {
 
 			wp_register_style( 'fplleague_admin_style', plugins_url( 'assets/styles/fplleague-backend.css', __FILE__ ) );
 			wp_enqueue_style( 'fplleague_admin_style' );
-
-		}
-
-
-		/**
-		 * Enqueue admin scripts
-		 */
-		public static function print_admin_scripts() {
 
 			if ( isset( $_GET['page'] ) ) {
 				
