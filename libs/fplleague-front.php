@@ -372,7 +372,7 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 
 				}
 
-				// Result
+				// Venue
 				if ( $id_team == $fixture['id_team_home'] ) {
 					$output .= '<td class="centered hidden-for-medium-up">H</td>';
 				}
@@ -380,35 +380,37 @@ if ( ! class_exists( 'FPLLeague_Front' ) ) {
 					$output .= '<td class="centered hidden-for-medium-up">A</td>';
 				}
 				
-				// Venue
-				if ( $id_team == $fixture['id_team_home'] ) {
-					if ( $fixture['point_home'] > $fixture['point_away'] ) {
-						$output .= '<td class="centered hidden-for-medium-up">W</td>';
+				// Result
+				if ( $fixture['played'] !== NULL ) {
+					if ( $id_team == $fixture['id_team_home'] ) {
+						if ( $fixture['point_home'] > $fixture['point_away'] ) {
+							$output .= '<td class="centered hidden-for-medium-up">W</td>';
+						}
+						else {
+							$output .= '<td class="centered hidden-for-medium-up">L</td>';
+						}
 					}
 					else {
-						$output .= '<td class="centered hidden-for-medium-up">L</td>';
+						if ( $fixture['point_away'] > $fixture['point_home'] ) {
+							$output .= '<td class="centered hidden-for-medium-up">W</td>';
+						}
+						else {
+							$output .= '<td class="centered hidden-for-medium-up">L</td>';
+						}
 					}
-				}
-				else {
-					if ( $fixture['point_away'] > $fixture['point_home'] ) {
-						$output .= '<td class="centered hidden-for-medium-up">W</td>';
-					}
-					else {
-						$output .= '<td class="centered hidden-for-medium-up">L</td>';
-					}
-				}
-							
-				if ( $id_team == $fixture['id_team_home'] ) {
-					$output .=
-						'<td class="centered hidden-for-medium-up">' . $fixture['point_home'] . '</td>' .
-						'<td class="centered hidden-for-medium-up">' . $fixture['point_away'] . '</td>';
-				} else if ( $id_team == $fixture['id_team_away'] ) {
-					$output .=
-						'<td class="centered hidden-for-medium-up">' . $fixture['point_away'] . '</td>' .
-						'<td class="centered hidden-for-medium-up">' . $fixture['point_home'] . '</td>';
-				}
 
+					if ( $id_team == $fixture['id_team_home'] ) {
+						$output .=
+							'<td class="centered hidden-for-medium-up">' . $fixture['point_home'] . '</td>' .
+							'<td class="centered hidden-for-medium-up">' . $fixture['point_away'] . '</td>';
+					} else if ( $id_team == $fixture['id_team_away'] ) {
+						$output .=
+							'<td class="centered hidden-for-medium-up">' . $fixture['point_away'] . '</td>' .
+							'<td class="centered hidden-for-medium-up">' . $fixture['point_home'] . '</td>';
+					}
 
+				}
+				
 				$output .=
 						'</tr>';
 
