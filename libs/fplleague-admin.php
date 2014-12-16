@@ -798,11 +798,11 @@ if (! class_exists('FPLLeague_Admin')) {
 
 		}
 
-		public static function fplleague_admin_get_players_from_team() {
+		public static function fplleague_admin_get_players_from_team( $id_team ) {
 
 			$db = new FPLLeague_Database;
-
-			echo 'this is the result';
+			$players = $db->get_players_from_team( $id_team );
+			echo json_encode( $players );
 			die();
 
 		}

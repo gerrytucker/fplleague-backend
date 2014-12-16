@@ -1096,7 +1096,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 
 			global $wpdb;
 
-            return $wpdb->get_results( $wpdb->prepare(
+			return $wpdb->get_results( $wpdb->prepare(
 				"SELECT p.id, p.first_name, p.last_name, p.id_player_team, t.name as team_name, d.name as division_name
 				FROM $wpdb->players AS p
 				LEFT JOIN $wpdb->teams AS t
@@ -1118,14 +1118,14 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 			global $wpdb;
 
 			return $wpdb->insert(
-                $wpdb->players,
-                array(
-                    'first_name' => $first_name,
-                    'last_name' => $last_name,
-                    'id_player_team' => $id_player_team
-                ),
-                array( '%s', '%s', '%d' )
-            );
+				$wpdb->players,
+				array(
+					'first_name' => $first_name,
+					'last_name' => $last_name,
+					'id_player_team' => $id_player_team
+				),
+				array( '%s', '%s', '%d' )
+			);
 
 		}
 
@@ -1168,16 +1168,39 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 
 			global $wpdb;
 			return $wpdb->get_row(
-                $wpdb->prepare(
-                    "SELECT first_name, last_name, id_player_team
-                    FROM $wpdb->players
-                    WHERE id = %d",
-                    $id_player_team
-                ), ARRAY_A
-            );
+				$wpdb->prepare(
+					"SELECT first_name, last_name, id_player_team
+					FROM $wpdb->players
+					WHERE id = %d",
+					$id_player_team
+				), ARRAY_A
+			);
 
 		}
-		
+
+		/**
+		 * Get all the players from a team
+		 */
+		public function get_players_from_team( $id_team, $offset = 0, $limit = 10 ) {
+
+			global $wpdb;
+
+			return $wpdb->get_results( $wpdb->prepare(
+				"SELECT p.id, p.first_name, p.last_name, p.id_player_team, t.name as team_name, d.name as division_name
+				FROM $wpdb->players AS p
+				LEFT JOIN $wpdb->teams AS t
+				ON p.id_player_team = t.id
+				LEFT JOIN $wpdb->divisions AS d
+				ON t.id_division = d.id
+				WHERE p.id_player_team = %d
+				ORDER BY t.name ASC, p.last_name, p.first_name
+				LIMIT %d, %d",
+				$id_team, $offset, $limit ), ARRAY_A
+			);
+
+		}
+
+
 		/**
 		 * Get all the doubles
 		 */
