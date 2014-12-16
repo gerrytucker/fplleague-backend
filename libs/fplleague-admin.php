@@ -831,14 +831,14 @@ if (! class_exists('FPLLeague_Admin')) {
 								$.post(ajaxurl, data, function (resp) {
 									console.log(resp);
 									var html;
-									$.each(resp, function (k, v) {
+									for(var i=0; i < resp.length - 1; i++) {
 										html +=
 											'<tr>' +
 												'<td>' +
 													'<input type="checkbox">' +
 												'</td>' +
 											'</tr>';
-									});
+									}
 									$('[data-scope="players-select-table"] tbody').html(html);
 									$('[data-scope="players-select"], [data-scope="players-select-table"]').show();
 								});
