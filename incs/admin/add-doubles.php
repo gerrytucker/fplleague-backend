@@ -71,6 +71,14 @@ if ( isset( $_POST['noheader'] ) ) {
 					<th scope="row">
 						<h3>Step 2 - Select Players</h3>
 					</th>
+					<th>
+						
+						<table class="widefat fixed tables" data-scope="players-select-table">
+							<tbody>
+							</tbody>
+						</table>
+						
+					</th>
 				</tr>
 				
 			</tbody>
