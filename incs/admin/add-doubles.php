@@ -75,7 +75,7 @@ if ( isset( $_POST['noheader'] ) ) {
 
 				<tr>
 
-					<table class="widefat fixed tables" data-scope="players-select-table">
+					<table style="display:none;" class="form-table widefat fixed tables" data-scope="players-select-table">
 						<tbody>
 						</tbody>
 					</table>
