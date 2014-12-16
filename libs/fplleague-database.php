@@ -716,7 +716,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 
 			global $wpdb;
 
-			return $wpdb->get_results( $wpdb->prepare(
+			$sql = $wpdb->prepare(
 				"SELECT a.id, b.scheduled, c.name AS team_home_name, d.name AS team_away_name
 				FROM $wpdb->fixtures a
 				LEFT JOIN $wpdb->schedules b
@@ -728,7 +728,12 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 				WHERE id_schedule = %d
 				ORDER BY c.name $order, a.id
 				LIMIT 0, 9999",
-				$id_schedule, $offset, $limit ), ARRAY_A
+				$id_schedule, $offset, $limit );
+			$f = "a.txt";
+			fopen($f, "w");
+			fwrite($f, $sql);
+			fclose($f);
+			return $wpdb->get_results( $sql, ARRAY_A
 			);
 
 		}
