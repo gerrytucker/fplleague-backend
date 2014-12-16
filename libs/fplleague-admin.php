@@ -802,6 +802,7 @@ if (! class_exists('FPLLeague_Admin')) {
 
 			$db = new FPLLeague_Database;
 			$players = $db->get_players_from_team( $id_team );
+			var_dump($players); die();
 			echo json_encode( $players );
 			die();
 
@@ -828,7 +829,6 @@ if (! class_exists('FPLLeague_Admin')) {
 						doubles: function () {
 
 							$('#doubles_select_team').change(function () {
-								console.log(ajaxurl);
 								var
 									id_team = $('option:selected', this).val(),
 									data = {
