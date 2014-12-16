@@ -728,7 +728,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 				WHERE id_schedule = %d
 				ORDER BY c.name $order, a.id
 				LIMIT 0, 9999",
-				$id_schedule, $offset, $limit )
+				$id_schedule, $offset, $limit ), ARRAY_A
 			);
 
 		}
@@ -1195,7 +1195,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 				WHERE p.id_player_team = %d
 				ORDER BY t.name ASC, p.last_name, p.first_name
 				LIMIT %d, %d",
-				$id_team, $offset, $limit ), ARRAY_A
+				$id_team, $offset, $limit )
 			);
 			var_dump($players); die();
 

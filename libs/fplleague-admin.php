@@ -829,7 +829,7 @@ if (! class_exists('FPLLeague_Admin')) {
 									};
 
 								$.post(ajaxurl, data, function (resp) {
-									console.log(resp.length);
+									console.log(resp);
 									var html;
 									for(var i=0; i < resp.length - 1; i++) {
 										html +=
