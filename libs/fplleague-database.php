@@ -1197,7 +1197,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 				LIMIT %d, %d",
 				$id_team, $offset, $limit )
 			);
-			var_dump($players); die();
+			echo json_encode($players); die();
 
 		}
 
