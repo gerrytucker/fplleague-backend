@@ -802,6 +802,7 @@ if (! class_exists('FPLLeague_Admin')) {
 			$id_team = $_POST['id_team'];
 			$db = new FPLLeague_Database;
 			$players = $db->get_players_from_team( $id_team );
+			header('Content-Type: application/json');
 			echo json_encode( $players );
 			die();
 
@@ -828,8 +829,9 @@ if (! class_exists('FPLLeague_Admin')) {
 									};
 
 								$.post(ajaxurl, data, function (resp) {
+									console.log(resp);
 									var html;
-									$(resp).each(function (i) {
+									$.each(resp, function (k, v) {
 										html +=
 											'<tr>' +
 												'<td>' +
