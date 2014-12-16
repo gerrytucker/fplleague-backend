@@ -818,7 +818,7 @@ if (! class_exists('FPLLeague_Admin')) {
 
 					$(document)
 						.ajaxStart(function () {
-							$('.spinner').show();
+							$('.spinner').css({display:'inline-block'}).show();
 						})
 						.ajaxStop(function () {
 							$('.spinner').hide();
