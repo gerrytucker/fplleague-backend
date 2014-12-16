@@ -815,6 +815,14 @@ if (! class_exists('FPLLeague_Admin')) {
 				(function ($) {
 					'use strict';
 
+					$(document)
+						.ajaxStart(function () {
+							$('.spinner').show();
+						})
+						.ajaxStop(function () {
+							$('.spinner').hide();
+						});
+								
 					var FPLLeague_Backend = {
 
 						doubles: function () {

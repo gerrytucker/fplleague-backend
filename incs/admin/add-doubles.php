@@ -63,6 +63,8 @@ if ( isset( $_POST['noheader'] ) ) {
 
 						</select>
 
+						<div class="spinner"></div>
+						
 					</td>
 
 				</tr>
