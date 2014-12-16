@@ -843,6 +843,12 @@ if (! class_exists('FPLLeague_Admin')) {
 												'<td>' +
 													resp[i].team_name +
 												'</td>' +
+												'<td>' +
+													resp[i].division_name +
+												'</td>' +
+												'<td>' +
+													resp[i].id +
+												'</td>' +
 											'</tr>';
 									}
 									$('[data-scope="players-select-table"] tbody').html(html);
