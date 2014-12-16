@@ -67,6 +67,12 @@ if ( isset( $_POST['noheader'] ) ) {
 
 				</tr>
 
+				<tr style="display:none;" data-scope="players-select">
+					<th scope="row">
+						<h3>Step 2 - Select Players</h3>
+					</th>
+				</tr>
+				
 			</tbody>
 
 		</table>

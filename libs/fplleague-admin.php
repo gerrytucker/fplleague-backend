@@ -828,7 +828,7 @@ if (! class_exists('FPLLeague_Admin')) {
 									};
 
 								$.post(ajaxurl, data, function (resp) {
-									console.log(resp);
+									$('[data-scope="players-select"]').show();
 								});
 
 							});
