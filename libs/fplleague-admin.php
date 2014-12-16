@@ -830,13 +830,18 @@ if (! class_exists('FPLLeague_Admin')) {
 
 								$.post(ajaxurl, data, function (resp) {
 									resp = JSON.parse(resp);
-									console.log(resp);
 									var html;
-									for(var i=0; i < resp.length - 1; i++) {
+									for(var i=0; i < resp.length; i++) {
 										html +=
 											'<tr>' +
 												'<td>' +
 													'<input type="checkbox">' +
+												'</td>' +
+												'<td>' +
+													resp[i].player_name +
+												'</td>' +
+												'<td>' +
+													resp[i].team_name +
 												'</td>' +
 											'</tr>';
 									}

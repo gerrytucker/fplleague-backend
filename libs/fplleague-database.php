@@ -1186,7 +1186,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 			global $wpdb;
 
 			$players = $wpdb->get_results( $wpdb->prepare(
-				"SELECT p.id, p.first_name, p.last_name, p.id_player_team, t.name as team_name, d.name as division_name
+				"SELECT p.id, CONCAT(p.first_name, ' ', p.last_name) as player_name, p.id_player_team, t.name as team_name, d.name as division_name
 				FROM $wpdb->players AS p
 				LEFT JOIN $wpdb->teams AS t
 				ON p.id_player_team = t.id
