@@ -1185,7 +1185,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 
 			global $wpdb;
 
-			return $wpdb->get_results( $wpdb->prepare(
+			$players = $wpdb->get_results( $wpdb->prepare(
 				"SELECT p.id, p.first_name, p.last_name, p.id_player_team, t.name as team_name, d.name as division_name
 				FROM $wpdb->players AS p
 				LEFT JOIN $wpdb->teams AS t
@@ -1197,6 +1197,7 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 				LIMIT %d, %d",
 				$id_team, $offset, $limit ), ARRAY_A
 			);
+			var_dump($players); die();
 
 		}
 
