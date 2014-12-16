@@ -63,7 +63,8 @@ if ( isset( $_POST['noheader'] ) ) {
 
 						</select>
 
-						<div class="spinner"></div>
+						<div class="spinner wait-1"></div>
+						<script type="text/javascript">jQuery('.spinner.wait-1').css('display', 'inline-block');</script>
 						
 					</td>
 
