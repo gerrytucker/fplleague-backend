@@ -957,6 +957,51 @@ if ( ! class_exists( 'FPLLeague_Database' ) ) {
 
 
 		/**
+		 * Get Tables (first 5 rows)
+		 */
+		public function get_table_first_5( $id_division ) {
+
+			global $wpdb;
+
+			return $wpdb->get_results( $wpdb->prepare(
+				"SELECT b.id, b.name as team_name, a.match_played, a.match_won, a.match_lost,
+				a.point_for, a.point_against, a.point_total, a.point_diff
+				FROM $wpdb->tables a
+				LEFT JOIN $wpdb->teams b
+				ON a.id_team = b.id
+				WHERE b.id_division = %d
+				ORDER BY a.point_total DESC, a.point_diff DESC, a.point_for DESC LIMIT 5",
+				$id_division), ARRAY_A
+			);
+
+		}
+
+
+		/**
+		 * Get Tables (last 5 rows)
+		 */
+		public function get_table_last_5( $id_division ) {
+
+			global $wpdb;
+
+			return $wpdb->get_results( $wpdb->prepare(
+              "SELECT *
+              FROM (
+				SELECT b.id, b.name as team_name, a.match_played, a.match_won, a.match_lost,
+				a.point_for, a.point_against, a.point_total, a.point_diff
+				FROM $wpdb->tables a
+				LEFT JOIN $wpdb->teams b
+				ON a.id_team = b.id
+				WHERE b.id_division = %d
+				ORDER BY a.point_total DESC, a.point_diff DESC, a.point_for DESC LIMIT 5
+              ) AS tbl
+              ORDER BY tbl.point_total DESC, tbl.point_diff DESC, tbl.point_for",
+              $id_division), ARRAY_A
+			);
+
+		}
+
+		/**
 		 * Update Tables
 		 */
 		public function build_tables() {
